@@ -9,7 +9,7 @@ class NetworkChangeReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
 
-        val status = NetworkUtil.getConnectivityStatusString(context)
+        val status = context.getConnectivityStatusString()
 
         Toast.makeText(context, status, Toast.LENGTH_SHORT).show()
     }
