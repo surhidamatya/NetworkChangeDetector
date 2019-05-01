@@ -44,17 +44,17 @@ public class NetworkUtil {
         return status;
     }
 
-    public static void getSSIDList(Context context){
+    public static void getSSIDList(Context context) {
         /*
-        * <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-        * Check this permission in manifest
-        * */
+         * <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+         * Check this permission in manifest
+         * */
         WifiManager wifiManager = (WifiManager) context
                 .getSystemService(Context.WIFI_SERVICE);
         List<WifiConfiguration> configuredList = wifiManager.getConfiguredNetworks();
         List<String> ssidList = new ArrayList<>();
 
-        for(WifiConfiguration config : configuredList) {
+        for (WifiConfiguration config : configuredList) {
             ssidList.add(config.SSID);
         }
     }
